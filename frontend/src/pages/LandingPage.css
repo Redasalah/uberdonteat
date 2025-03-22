@@ -1,33 +1,135 @@
 .landing-page {
-    min-height: 100vh;
-    width: 100%;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/Landing-page-background.jpg');
-    background-size: cover;
-    background-position: center;
-    color: white;
-  }
-  
-  .hero-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 0 20px;
-  }
-  
-  .hero-content {
-    text-align: center;
-    max-width: 800px;
-  }
-  
-  .hero-content h1 {
-    font-size: 42px;
-    margin-bottom: 16px;
-  }
-  
-  .hero-content p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    opacity: 0.9;
-  }
- 
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.menu-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 10px;
+}
+
+.login-button, .signup-button {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.login-button {
+  background-color: rgba(63, 92, 51, 0.8);
+  color: white;
+}
+
+.signup-button {
+  background-color: rgb(244, 238, 169);
+  color: black;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 0 20px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 30px auto 0;
+}
+
+.location-input, .search-input {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  padding: 10px 15px;
+}
+
+.location-icon {
+  margin-right: 10px;
+}
+
+.location-input input, .search-input input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+  padding: 8px;
+  color: black;
+}
+
+.search-input button {
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: bold;
+}

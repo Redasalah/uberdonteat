@@ -1,14 +1,7 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
 import './LandingPage.css';
 
-function LandingPage() {
-  const history = useHistory();
-  
-  const goToLogin = () => {
-    history.push('/login');
-  };
-  
+function LandingPage({ goToLogin }) {
   return (
     <div className="landing-page">
       <img 
@@ -17,7 +10,6 @@ function LandingPage() {
         className="background-image" 
       />
       <div className="background-overlay"></div>
-      
       <div className="navbar">
         <div className="navbar-left">
           <button className="menu-button">☰</button>

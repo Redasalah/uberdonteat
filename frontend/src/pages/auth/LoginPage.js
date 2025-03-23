@@ -1,19 +1,18 @@
+// src/pages/auth/LoginPage.js
 import React, { useState } from 'react';
 import './LoginPage.css';
 
-function LoginPage() {
+function LoginPage({ goToHome }) {
   const [contactInfo, setContactInfo] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Continuing with:', contactInfo);
-    // Your authentication logic here
+    console.log('Form submitted with:', contactInfo);
   };
 
   return (
     <div className="auth-page">
       <div className="header-bar"></div>
-      
       <div className="auth-form-container">
         <h2>Please provide your phone number or email address</h2>
         
@@ -21,9 +20,9 @@ function LoginPage() {
           <input
             type="text"
             placeholder="Enter a phone number or email address"
+            className="contact-input"
             value={contactInfo}
             onChange={(e) => setContactInfo(e.target.value)}
-            className="contact-input"
           />
           
           <button type="submit" className="continue-button">Continue</button>
@@ -36,8 +35,8 @@ function LoginPage() {
         </div>
         
         <div className="social-buttons">
-          <button className="social-button"></button>
-          <button className="social-button"></button>
+          <button className="social-button">Continue with Google</button>
+          <button className="social-button">Continue with Facebook</button>
         </div>
         
         <p className="terms-text">
@@ -45,6 +44,8 @@ function LoginPage() {
           messages at the number provided, including automated ones, from Uber and 
           its affiliates.
         </p>
+        
+        <button onClick={goToHome} className="back-button">Back to Home</button>
       </div>
     </div>
   );

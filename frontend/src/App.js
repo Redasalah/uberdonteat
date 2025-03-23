@@ -1,13 +1,23 @@
+// src/App.js
 import React, { useState } from 'react';
+import LandingPage from './pages/LandingPage';
+import LoginPage from './pages/auth/LoginPage';
 import './App.css';
 
-// Import your components directly
-import LandingPage from './pages/LandingPage';
-
 function App() {
+  const [currentPage, setCurrentPage] = useState('home');
+  
+  // Navigation functions
+  const goToLogin = () => setCurrentPage('login');
+  const goToHome = () => setCurrentPage('home');
+  
   return (
     <div className="App">
-      <LandingPage />
+      {currentPage === 'home' ? (
+        <LandingPage goToLogin={goToLogin} />
+      ) : (
+        <LoginPage goToHome={goToHome} />
+      )}
     </div>
   );
 }

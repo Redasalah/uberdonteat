@@ -1,3 +1,4 @@
+/* src/App.css */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,5 +7,4 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  line-height: 1.6;
 }
